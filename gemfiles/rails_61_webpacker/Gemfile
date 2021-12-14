@@ -3,7 +3,7 @@ source "https://rubygems.org"
 
 group :development, :test do
   gem "rake"
-  gem "pry" # Easily debug from your console with `binding.pry`
+  gem "pry", "~> 0.13.1" # Easily debug from your console with `binding.pry`
   gem "pry-byebug", platform: :mri # Step-by-step debugging
 
   gem "cancancan"
@@ -29,8 +29,8 @@ group :test do
   gem "cucumber-rails", require: false
   gem "cucumber"
   gem "database_cleaner"
-  gem "jasmine"
-  gem "jasmine-core"
+  gem "jasmine", "~> 2.99"
+  gem "jasmine-core", "~> 2.99"
   gem "launchy"
   gem "parallel_tests"
   gem "rails-i18n" # Provides default i18n for many languages
