@@ -20,7 +20,7 @@ jobs:
       fail-fast: false
 
       matrix:
-        ruby: [{ name: 2.7, value: 2.7.2 }]
+        ruby: [{ name: 2.7, value: 2.7.5 }]
         os: [ubuntu-20.04]
 
     steps:
@@ -77,29 +77,43 @@ jobs:
       fail-fast: false
 
       matrix:
-        ruby: [{ name: 2.7, value: 2.7.2 }, { name: 2.6, value: 2.6.6 }]
+        ruby: [{ name: 3.0, value: 3.0.3 }, { name: 2.7, value: 2.7.5 }, { name: 2.6, value: 2.6.9 }]
 
         os: [ubuntu-20.04]
 
-        deps: [rails_52, rails_60, rails_61, rails_61_turbolinks, rails_61_webpacker, rails_70]
+        deps: [rails_52, rails_60, rails_61, rails_70]
 
         exclude:
-          - ruby: { name: 2.6, value: 2.6.6 }
+          - ruby: { name: 2.6, value: 2.6.9 }
             os: ubuntu-20.04
             deps: rails_70
-
-        include:
-          - ruby: { name: 2.5, value: 2.5.8 }
+          - ruby: { name: 2.7, value: 2.7.5 }
+            os: ubuntu-20.04
+            deps: rails_52
+          - ruby: { name: 3.0, value: 3.0.3 }
             os: ubuntu-20.04
             deps: rails_52
 
-          - ruby: { name: 2.5, value: 2.5.8 }
+        include:
+          - ruby: { name: 2.5, value: 2.5.9 }
+            os: ubuntu-20.04
+            deps: rails_52
+
+          - ruby: { name: 2.5, value: 2.5.9 }
             os: ubuntu-20.04
             deps: rails_60
 
-          - ruby: { name: 2.5, value: 2.5.8 }
+          - ruby: { name: 2.5, value: 2.5.9 }
             os: ubuntu-20.04
             deps: rails_61
+
+          - ruby: { name: 2.7, value: 2.7.5 }
+            os: ubuntu-20.04
+            deps: rails_61_turbolinks
+
+          - ruby: { name: 2.7, value: 2.7.5 }
+            os: ubuntu-20.04
+            deps: rails_61_webpacker
 
     env:
       COVERAGE: true
