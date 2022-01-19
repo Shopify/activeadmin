@@ -99,11 +99,11 @@ module ActiveAdmin
     # The class this resource wraps. If you register the Post model, Resource#resource_class
     # will point to the Post class
     def resource_class
-      ActiveSupport::Dependencies.constantize(resource_class_name)
+      constantizer(resource_class_name)
     end
 
     def decorator_class
-      ActiveSupport::Dependencies.constantize(decorator_class_name) if decorator_class_name
+      constantizer(decorator_class_name) if decorator_class_name
     end
 
     def resource_name_extension
@@ -208,6 +208,14 @@ module ActiveAdmin
 
     def default_csv_builder
       @default_csv_builder ||= CSVBuilder.default_for_resource(self)
+    end
+
+    def constantizer(resource_name)
+      if ActiveSupport::Dependencies.respond_to?(:constantize)
+        ActiveSupport::Dependencies.constantize(resource_name)
+      else
+        resource_name.constantize
+      end
     end
 
     def define_resource_name_extension(resource)

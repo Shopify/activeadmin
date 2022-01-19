@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 source "https://rubygems.org"
 
+gem "inherited_resources", github: "activeadmin/inherited_resources" # FIXME: remove
+gem "arbre", github: "activeadmin/arbre" # FIXME: remove
+
 group :development, :test do
   gem "rake"
-  gem "pry" # Easily debug from your console with `binding.pry`
+  gem "pry", "~> 0.13.1" # Easily debug from your console with `binding.pry`
   gem "pry-byebug", platform: :mri # Step-by-step debugging
 
   gem "cancancan"
@@ -13,7 +16,7 @@ group :development, :test do
   gem "draper"
   gem "devise"
 
-  gem "rails", "~> 6.1.0"
+  gem "rails", "~> 7.0.0"
   gem "activerecord-jdbcsqlite3-adapter", platform: :jruby
 
   gem "sprockets-rails"
@@ -24,14 +27,14 @@ group :test do
   gem "cuprite"
   gem "capybara"
   gem "webrick"
-  gem "db-query-matchers"
+  gem "db-query-matchers", github: "tagliala/db-query-matchers", branch: "chore/allow-latest-gem-versions" # FIXME: revert to stable
 
   gem "simplecov", require: false # Test coverage generator. Go to /coverage/ after running tests
-  gem "cucumber-rails", require: false
+  gem "cucumber-rails", github: "cucumber/cucumber-rails", require: false # FIXME: revert to stable
   gem "cucumber"
   gem "database_cleaner"
-  gem "jasmine"
-  gem "jasmine-core"
+  gem "jasmine", "~> 2.99"
+  gem "jasmine-core", "~> 2.99"
   gem "launchy"
   gem "parallel_tests"
   gem "rails-i18n" # Provides default i18n for many languages
