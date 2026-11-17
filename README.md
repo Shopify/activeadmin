@@ -1,3 +1,5 @@
+> **This repository is no longer maintained.** It has been archived by Shopify and receives no updates or security fixes.
+
 # Active Admin
 
 [Active Admin](https://activeadmin.info) is a Ruby on Rails framework for
